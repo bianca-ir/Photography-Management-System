@@ -1,0 +1,30 @@
+<div id="add_div" class="form_div">
+  Add a Client.
+  <form [formGroup]="addForm" (ngSubmit)="saveClient()">
+    <label for="name"><span>Name</span></label>
+    <input type="text" id="name" formControlName="name">
+    <div class="errorMessage" *ngIf="addForm.get('name').invalid && (addForm.get('name').dirty || addForm.get('name').touched)">
+      Please provide a valid name!
+    </div>
+
+    <label for="email"><span>Email</span></label>
+    <input type="text" id="email" formControlName="email">
+    <div class="errorMessage" *ngIf="addForm.get('email').invalid && (addForm.get('email').dirty || addForm.get('email').touched)">
+      Please provide a valid email!
+    </div>
+
+    <label for="phoneNumber"><span>PhoneNumber</span></label>
+    <input type="text" id="phoneNumber" formControlName="phoneNumber">
+    <div class="errorMessage" *ngIf="addForm.get('phoneNumber').invalid && (addForm.get('phoneNumber').dirty || addForm.get('phoneNumber').touched)">
+      Please provide a valid phoneNumber!
+    </div>
+
+
+    <button type="submit" [disabled]="!addForm.valid">Add Client</button>
+  </form>
+
+  <div id="add_result">
+    {{addResponse}}
+  </div>
+
+</div>

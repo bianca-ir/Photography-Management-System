@@ -1,0 +1,30 @@
+<a href="/add-photographer">Add Photographer</a>
+
+<div class="form_div">
+  <table border="1">
+    <tr>
+      <th (click)="sortPhotographers(0)">Id</th>
+      <th (click)="sortPhotographers(1)">Name</th>
+      <th (click)="sortPhotographers(2)">Age</th>
+      <th (click)="sortPhotographers(3)">Camera Brand</th>
+      <th (click)="sortPhotographers(4)">Rating</th> </tr>
+    <tr *ngFor="let photographer of photographers">
+      <td>{{photographer.id}}</td>
+      <td>{{photographer.name}}</td>
+      <td>{{photographer.age}}</td>
+      <td>{{photographer.cameraBrand}}</td>
+      <td>{{photographer.rating}}</td>
+      <td>
+        <button (click)="updatePhotographer(photographer.id)">
+          Update photographer
+        </button>
+      </td>
+      <td>
+        <button (click)="deletePhotographer(photographer.id)">
+          Delete photographer
+        </button>
+      </td>
+    </tr>
+  </table>
+
+</div>

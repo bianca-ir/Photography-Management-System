@@ -1,0 +1,36 @@
+<div id="add_div" class="form_div">
+  Add a Picture.
+  <form [formGroup]="addForm" (ngSubmit)="savePicture()">
+    <label for="title"><span>Title</span></label>
+    <input type="text" id="title" formControlName="title">
+    <div class="errorMessage" *ngIf="addForm.get('title').invalid && (addForm.get('title').dirty || addForm.get('title').touched)">
+      Please provide a valid title!
+    </div>
+
+    <label for="description"><span>Description</span></label>
+    <input type="text" id="description" formControlName="description">
+    <div class="errorMessage" *ngIf="addForm.get('description').invalid && (addForm.get('description').dirty || addForm.get('description').touched)">
+      Please provide a valid description!
+    </div>
+
+    <label for="width"><span>Width</span></label>
+    <input type="text" id="width" formControlName="width">
+    <div class="errorMessage" *ngIf="addForm.get('width').invalid && (addForm.get('width').dirty || addForm.get('width').touched)">
+      Please provide a valid width!
+    </div>
+
+    <label for="height"><span>Height</span></label>
+    <input type="text" id="height" formControlName="height">
+    <div class="errorMessage" *ngIf="addForm.get('height').invalid && (addForm.get('height').dirty || addForm.get('height').touched)">
+      Please provide a valid height!
+    </div>
+
+
+    <button type="submit" [disabled]="!addForm.valid">Add Picture</button>
+  </form>
+
+  <div id="add_result">
+    {{addResponse}}
+  </div>
+
+</div>

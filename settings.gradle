@@ -1,0 +1,4 @@
+rootProject.name = 'Lab9Angular'
+include 'core'
+include 'web'
+

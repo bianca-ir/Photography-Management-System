@@ -1,0 +1,27 @@
+table{
+  margin-top: 20px;
+  position: absolute;
+  text-align: center;
+  font-size: 17px;
+  font-family: Segoe UI;
+  border: 2px solid blueviolet;
+}
+
+th{
+  cursor: pointer;
+  background-color: mediumorchid;
+}
+
+th, td{
+  padding: 1px;
+  border: 1px dotted darkslategray;
+}
+
+tr:nth-child(even){
+  background-color: plum;
+}
+
+a{
+  border: 1px solid blue;
+  margin-bottom: 5px;
+}

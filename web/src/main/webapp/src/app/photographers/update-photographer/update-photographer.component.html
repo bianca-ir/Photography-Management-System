@@ -1,0 +1,39 @@
+<div id="update_div" class="form_div">
+  Update the Photographer.
+  <form [formGroup]="updateForm" (ngSubmit)="updatePhotographer()">
+    <label for="id"><span>Id</span></label>
+    <input type="text" id="id" formControlName="id" readonly [(ngModel)]="id">
+
+    <label for="name"><span>Name</span></label>
+    <input type="text" id="name" formControlName="name" [(ngModel)]="photographer.name">
+    <div class="errorMessage" *ngIf="updateForm.get('name').invalid && (updateForm.get('name').dirty || updateForm.get('name').touched)">
+      Please provide a valid name!
+    </div>
+
+    <label for="age"><span>Age</span></label>
+    <input type="text" id="age" formControlName="age" [(ngModel)]="photographer.age">
+    <div class="errorMessage" *ngIf="updateForm.get('age').invalid && (updateForm.get('age').dirty || updateForm.get('age').touched)">
+      Please provide a valid age!
+    </div>
+
+    <label for="cameraBrand"><span>Camera Brand</span></label>
+    <input type="text" id="cameraBrand" formControlName="cameraBrand" [(ngModel)]="photographer.cameraBrand">
+    <div class="errorMessage" *ngIf="updateForm.get('cameraBrand').invalid && (updateForm.get('cameraBrand').dirty || updateForm.get('cameraBrand').touched)">
+      Please provide a valid name!
+    </div>
+
+    <label for="rating"><span>Rating</span></label>
+    <input type="text" id="rating" formControlName="rating" [(ngModel)]="photographer.rating">
+    <div class="errorMessage" *ngIf="updateForm.get('rating').invalid && (updateForm.get('rating').dirty || updateForm.get('rating').touched)">
+      The rating has to be between 0 and 10!
+    </div>
+
+
+    <button type="submit" [disabled]="!updateForm.valid">Update Photographer</button>
+  </form>
+
+  <div id="update_result">
+    {{updateResponse}}
+  </div>
+
+</div>

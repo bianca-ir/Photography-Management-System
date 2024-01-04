@@ -1,0 +1,39 @@
+<div id="add_div" class="form_div">
+  Update the Picture.
+  <form [formGroup]="updateForm" (ngSubmit)="updatePicture()">
+    <label for="id"><span>Id</span></label>
+    <input type="text" id="id" formControlName="id" readonly [(ngModel)]="id">
+
+    <label for="title"><span>Title</span></label>
+    <input type="text" id="title" formControlName="title" [(ngModel)]="picture.title">
+    <div class="errorMessage" *ngIf="updateForm.get('title').invalid && (updateForm.get('title').dirty || updateForm.get('title').touched)">
+      Please provide a valid title!
+    </div>
+
+    <label for="description"><span>Description</span></label>
+    <input type="text" id="description" formControlName="description" [(ngModel)]="picture.description">
+    <div class="errorMessage" *ngIf="updateForm.get('description').invalid && (updateForm.get('description').dirty || updateForm.get('description').touched)">
+      Please provide a valid description!
+    </div>
+
+    <label for="width"><span>Width</span></label>
+    <input type="text" id="width" formControlName="width" [(ngModel)]="picture.width">
+    <div class="errorMessage" *ngIf="updateForm.get('width').invalid && (updateForm.get('width').dirty || updateForm.get('width').touched)">
+      Please provide a valid width!
+    </div>
+
+    <label for="height"><span>Height</span></label>
+    <input type="text" id="height" formControlName="height" [(ngModel)]="picture.height">
+    <div class="errorMessage" *ngIf="updateForm.get('height').invalid && (updateForm.get('height').dirty || updateForm.get('height').touched)">
+      Please provide a valid height!
+    </div>
+
+
+    <button type="submit" [disabled]="!updateForm.valid">Update Picture</button>
+  </form>
+
+  <div id="add_result">
+    {{updateResponse}}
+  </div>
+
+</div>

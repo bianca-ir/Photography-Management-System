@@ -1,0 +1,30 @@
+<div class="form_div">
+  Add an Album.
+  <form #addForm="ngForm" (ngSubmit)="saveAlbum()">
+    <label for="photoSessionName"><span>Session Name</span></label>
+    <input type="text" id="photoSessionName" [(ngModel)]="album.photoSessionName" name="photoSessionName" #photoSessionName="ngModel" required>
+    <div class="errorMessage" *ngIf="photoSessionName.invalid && (photoSessionName.dirty || photoSessionName.touched)">
+      Please provide a valid photo session name!
+    </div>
+
+    <label for="clientId"><span>Clinet Id</span></label>
+    <input type="text" id="clientId" [(ngModel)]="album.clientId" #clientId="ngModel" name="clientId" required>
+    <div class="errorMessage" *ngIf="clientId.invalid && (clientId.dirty || clientId.touched)">
+      Please provide a client id!
+    </div>
+
+    <label for="photographerId"><span>Photographer Id</span></label>
+    <input type="text" id="photographerId" [(ngModel)]="album.photographerId" #photographerId="ngModel" name="photographerId" required>
+    <div class="errorMessage" *ngIf="photographerId.invalid && (photographerId.dirty || photographerId.touched)">
+      Please provide a valid photographer id!
+    </div>
+
+
+    <button type="submit" [disabled]="!addForm.valid">Add Album</button>
+  </form>
+
+  <div id="add_result">
+    {{addResponse}}
+  </div>
+
+</div>

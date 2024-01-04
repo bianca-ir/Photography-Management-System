@@ -1,0 +1,33 @@
+<div id="add_div" class="form_div">
+  Update the Client.
+  <form [formGroup]="updateForm" (ngSubmit)="updateClient()">
+    <label for="id"><span>Id</span></label>
+    <input type="text" id="id" formControlName="id" readonly [(ngModel)]="id">
+
+    <label for="name"><span>Name</span></label>
+    <input type="text" id="name" formControlName="name" [(ngModel)]="client.name">
+    <div class="errorMessage" *ngIf="updateForm.get('name').invalid && (updateForm.get('name').dirty || updateForm.get('name').touched)">
+      Please provide a valid name!
+    </div>
+
+    <label for="email"><span>Email</span></label>
+    <input type="text" id="email" formControlName="email" [(ngModel)]="client.email">
+    <div class="errorMessage" *ngIf="updateForm.get('email').invalid && (updateForm.get('email').dirty || updateForm.get('email').touched)">
+      Please provide a valid email!
+    </div>
+
+    <label for="phoneNumber"><span>PhoneNumber</span></label>
+    <input type="text" id="phoneNumber" formControlName="phoneNumber" [(ngModel)]="client.phoneNumber">
+    <div class="errorMessage" *ngIf="updateForm.get('phoneNumber').invalid && (updateForm.get('phoneNumber').dirty || updateForm.get('phoneNumber').touched)">
+      Please provide a valid phoneNumber!
+    </div>
+
+
+    <button type="submit" [disabled]="!updateForm.valid">Update Client</button>
+  </form>
+
+  <div id="update_result">
+    {{updateResponse}}
+  </div>
+
+</div>

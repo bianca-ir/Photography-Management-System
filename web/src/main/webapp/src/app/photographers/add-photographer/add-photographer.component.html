@@ -1,0 +1,36 @@
+<div id="add_div" class="form_div">
+  Add a Photographer.
+  <form [formGroup]="addForm" (ngSubmit)="savePhotographer()">
+    <label for="name"><span>Name</span></label>
+    <input type="text" id="name" formControlName="name">
+    <div class="errorMessage" *ngIf="addForm.get('name').invalid && (addForm.get('name').dirty || addForm.get('name').touched)">
+      Please provide a valid name!
+    </div>
+
+    <label for="age"><span>Age</span></label>
+    <input type="text" id="age" formControlName="age">
+    <div class="errorMessage" *ngIf="addForm.get('age').invalid && (addForm.get('age').dirty || addForm.get('age').touched)">
+      Please provide a valid age!
+    </div>
+
+    <label for="cameraBrand"><span>Camera Brand</span></label>
+    <input type="text" id="cameraBrand" formControlName="cameraBrand">
+    <div class="errorMessage" *ngIf="addForm.get('cameraBrand').invalid && (addForm.get('cameraBrand').dirty || addForm.get('cameraBrand').touched)">
+      Please provide a valid name!
+    </div>
+
+    <label for="rating"><span>Rating</span></label>
+    <input type="text" id="rating" formControlName="rating">
+    <div class="errorMessage" *ngIf="addForm.get('rating').invalid && (addForm.get('rating').dirty || addForm.get('rating').touched)">
+      The rating has to be between 0 and 10!
+    </div>
+
+
+    <button type="submit" [disabled]="!addForm.valid">Add Photographer</button>
+  </form>
+
+  <div id="add_result">
+    {{addResponse}}
+  </div>
+
+</div>

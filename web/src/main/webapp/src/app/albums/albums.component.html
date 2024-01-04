@@ -1,0 +1,24 @@
+<a href="/add-album">Add Album</a>
+
+<div class="form_div">
+  <table border="1">
+    <tr> <th>Id</th> <th>Photo Session Name</th> <th>Client Id</th> <th>Photographer Id</th></tr>
+    <tr *ngFor="let album of albums">
+      <td>{{album.id}}</td>
+      <td>{{album.photoSessionName}}</td>
+      <td>{{album.clientId}}</td>
+      <td>{{album.photographerId}}</td>
+      <td>
+        <button (click)="updateAlbum(album.id)">
+          Update album
+        </button>
+      </td>
+      <td>
+        <button (click)="deleteAlbum(album.id)">
+          Delete album
+        </button>
+      </td>
+    </tr>
+  </table>
+
+</div>

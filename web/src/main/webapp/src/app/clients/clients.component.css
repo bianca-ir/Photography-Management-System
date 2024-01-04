@@ -1,0 +1,80 @@
+.form_div{
+  position: relative;
+  width: 50%;
+  border: 1px solid black;
+  border-radius: 3vh;
+
+  margin: 1vh;
+
+  padding: 10px 10px 10px 10px;
+
+}
+
+form{
+  position: relative;
+}
+
+button[type=submit]{
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 5%;
+  width: 15%;
+}
+
+.form_div input[type=text]{
+  box-sizing: border-box;
+  border: 2px solid darkmagenta;
+  border-radius: 4px;
+  padding: 7px;
+  width: 50%;
+}
+
+.form_div label{
+  display: block;
+  padding: 0.5%;
+  margin-left: 3%;
+}
+
+.form_div label > span{
+  width: 20%;
+  font-weight: bold;
+  float: left;
+  padding-top: 2%;
+  padding-right: 5px;
+}
+
+.errorMessage{
+  margin-left: 3%;
+  color: red;
+}
+
+table{
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  font-size: 17px;
+  font-family: Segoe UI;
+  border: 2px solid blueviolet;
+}
+
+th{
+  cursor: pointer;
+  background-color: mediumorchid;
+}
+
+th, td{
+  padding: 1px;
+  border: 1px dotted darkslategray;
+}
+
+tr:nth-child(even){
+  background-color: plum;
+}
+
+
+a{
+  border: 1px solid blue;
+  margin-bottom: 5px;
+}

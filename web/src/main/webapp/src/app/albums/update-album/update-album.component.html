@@ -1,0 +1,33 @@
+<div id="update_div" class="form_div">
+  Update the Album.
+  <form [formGroup]="updateForm" (ngSubmit)="updateAlbum()">
+    <label for="id"><span>Id</span></label>
+    <input type="text" id="id" formControlName="id" readonly [(ngModel)]="id">
+
+    <label for="photoSessionName"><span>Session Name</span></label>
+    <input type="text" id="photoSessionName" formControlName="photoSessionName" [(ngModel)]="album.photoSessionName">
+    <div class="errorMessage" *ngIf="updateForm.get('photoSessionName').invalid && (updateForm.get('photoSessionName').dirty || updateForm.get('photoSessionName').touched)">
+      Please provide a valid photo session name!
+    </div>
+
+    <label for="clientId"><span>Clinet Id</span></label>
+    <input type="text" id="clientId" formControlName="clientId" [(ngModel)]="album.clientId">
+    <div class="errorMessage" *ngIf="updateForm.get('clientId').invalid && (updateForm.get('clientId').dirty || updateForm.get('photographerId').touched)">
+      Please provide a client id!
+    </div>
+
+    <label for="photographerId"><span>Photographer Id</span></label>
+    <input type="text" id="photographerId" formControlName="photographerId" [(ngModel)]="album.photographerId">
+    <div class="errorMessage" *ngIf="updateForm.get('photographerId').invalid && (updateForm.get('photographerId').dirty || updateForm.get('photographerId').touched)">
+      Please provide a valid photographer id!
+    </div>
+
+
+    <button type="submit" [disabled]="!updateForm.valid">Update Album</button>
+  </form>
+
+  <div id="update_result">
+    {{updateResponse}}
+  </div>
+
+</div>

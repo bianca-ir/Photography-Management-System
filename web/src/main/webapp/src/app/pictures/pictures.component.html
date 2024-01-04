@@ -1,0 +1,25 @@
+<a href="/add-picture">Add Picture</a>
+
+<div class="form_div">
+  <table border="1">
+    <tr> <th>Id</th> <th>Title</th> <th>Desciption</th> <th>Width</th> <th>Height</th> </tr>
+    <tr *ngFor="let picture of pictures">
+      <td>{{picture.id}}</td>
+      <td>{{picture.title}}</td>
+      <td>{{picture.description}}</td>
+      <td>{{picture.width}}</td>
+      <td>{{picture.height}}</td>
+      <td>
+        <button (click)="updatePicture(picture.id)">
+          Update picture
+        </button>
+      </td>
+      <td>
+        <button (click)="deletePicture(picture.id)">
+          Delete picture
+        </button>
+      </td>
+    </tr>
+  </table>
+
+</div>

@@ -1,0 +1,34 @@
+<a href="/add-client">Add Client</a>
+
+<div class="form_div">
+  Clients
+  <form [formGroup]="filterForm" (ngSubmit)="filterClients()">
+    <label for="name_filter"><span>Name</span></label>
+    <input type="text" id="name_filter" formControlName="name_filter">
+
+    <button type="submit"> Filter Clients By Name</button>
+  </form>
+
+</div>
+
+<table border="1">
+  <tr>
+    <th>Id</th>
+    <th>Name</th> <th>Email</th> <th>PhoneNumber</th> </tr>
+  <tr *ngFor="let client of clients">
+    <td>{{client.id}}</td>
+    <td>{{client.name}}</td>
+    <td>{{client.email}}</td>
+    <td>{{client.phoneNumber}}</td>
+    <td>
+      <button (click)="updateClient(client.id)">
+        Update client
+      </button>
+    </td>
+    <td>
+      <button (click)="deleteClient(client.id)">
+        Delete client
+      </button>
+    </td>
+  </tr>
+</table>
